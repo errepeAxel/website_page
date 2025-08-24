@@ -1,10 +1,6 @@
 ---
 title: "Axel Rodríguez-Pérez"
-<<<<<<< HEAD
-subtitle: '<span class="typewriter">Bioinformatician</span>'
-=======
 subtitle: '<span class="typewriter"></span>'
->>>>>>> 0f1e57c71ef5dc7b7d802981a38dd4a673b11d57
 image: profile-pic-3.png
 about: # https://quarto.org/docs/websites/website-about.html
   template: jolla
@@ -34,7 +30,7 @@ Workplace \| Job title \| April 20XX - present
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const phrases = ["bioinformatician", "omics enthusiast", "cancer biology enthusiast"];
+  const phrases = ["Bioinformatician", "Omics Enthusiast", "Cancer Biology Enthusiast"];
   const el = document.querySelector('.typewriter');
   let i = 0, j = 0, current = [], isDeleting = false;
 
