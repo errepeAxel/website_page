@@ -1,6 +1,10 @@
 ---
 title: "Axel Rodríguez-Pérez"
+<<<<<<< HEAD
 subtitle: '<span class="typewriter">Bioinformatician</span>'
+=======
+subtitle: '<span class="typewriter"></span>'
+>>>>>>> 0f1e57c71ef5dc7b7d802981a38dd4a673b11d57
 image: profile-pic-3.png
 about: # https://quarto.org/docs/websites/website-about.html
   template: jolla
@@ -24,5 +28,43 @@ A little bit about me and my life.
 University of XYZ, City \| Location \| Sept 20XX - June 20XX
 
 ## Experience
-
+ 
 Workplace \| Job title \| April 20XX - present
+
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const phrases = ["bioinformatician", "omics enthusiast", "cancer biology enthusiast"];
+  const el = document.querySelector('.typewriter');
+  let i = 0, j = 0, current = [], isDeleting = false;
+
+  function type() {
+    const full = phrases[i];
+    if (!isDeleting) {
+      if (j < full.length) {
+        current.push(full.charAt(j));
+        j++;
+        el.textContent = current.join('');
+      } else {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+      }
+    } else {
+      if (j > 0) {
+        current.pop();
+        j--;
+        el.textContent = current.join('');
+      } else {
+        isDeleting = false;
+        i = (i + 1) % phrases.length;
+      }
+    }
+    const timeout = isDeleting ? 100 : 150;
+    setTimeout(type, timeout);
+  }
+
+  type();
+});
+</script>
+```

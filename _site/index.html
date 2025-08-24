@@ -23,6 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
+<<<<<<< HEAD
+=======
+<style>
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid #4E937A;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  animation: blink-caret 0.75s step-end infinite;
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #4E937A; }
+}
+</style>
+
+
+>>>>>>> 0f1e57c71ef5dc7b7d802981a38dd4a673b11d57
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -68,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Axel Rodríguez-Pérez – Home">
-<meta property="og:description" content="Bioinformatician">
+<meta property="og:description" content="bioinformatician">
 <meta property="og:image" content="profile-pic-3.png">
 <meta property="og:site_name" content="Home">
 </head>
@@ -114,14 +133,14 @@ ul.task-list li input[type="checkbox"] {
  <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Axel Rodríguez-Pérez</h1>
-<p class="subtitle lead"><span class="typewriter">Bioinformatician</span></p>
+<p class="subtitle lead"><span class="typewriter"></span></p>
 </div>
 <div class="quarto-title-meta">
   </div>
 </header><main class="content" id="quarto-document-content">
 <p>This page is under construction!!!!</p>
 <p>A little bit about me and my life.</p>
-<p>Duis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi.</p>
+<p>Etiam non efficitur urna, quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 <section id="education" class="level2">
 <h2 data-anchor-id="education">Education</h2>
 <p>University of XYZ, City | Location | Sept 20XX - June 20XX</p>
@@ -571,7 +590,40 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const phrases = ["bioinformatician", "omics enthusiast", "cancer biology enthusiast"];
+  const el = document.querySelector('.typewriter');
+  let i = 0, j = 0, current = [], isDeleting = false;
 
+  function type() {
+    const full = phrases[i];
+    if (!isDeleting) {
+      if (j < full.length) {
+        current.push(full.charAt(j));
+        j++;
+        el.textContent = current.join('');
+      } else {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+      }
+    } else {
+      if (j > 0) {
+        current.pop();
+        j--;
+        el.textContent = current.join('');
+      } else {
+        isDeleting = false;
+        i = (i + 1) % phrases.length;
+      }
+    }
+    const timeout = isDeleting ? 100 : 150;
+    setTimeout(type, timeout);
+  }
 
+  type();
+});
+</script>
 
 </body></html>
