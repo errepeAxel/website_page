@@ -3,13 +3,15 @@
 // Sass Variables
 // https://quarto.org/docs/output-formats/html-themes.html#sass-variables
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
 
-$color-bg: #F9FAFB;
-$color-text: #2C3E50;
-$color-primary: #4E937A;
-$color-link: #3A86FF;
-$color-highlight: #E07A5F;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+
+$color-bg: #FEFAF6;
+$color-text: #1E293B;
+$color-primary: #2A9D8F;
+$color-link: #E76F51;
+$color-highlight: #F4A261;
 
 /* Colors */
 $body-bg: $color-bg;
@@ -41,7 +43,7 @@ span.navbar-title {
 
 a {
   &:hover {
-    color: lighten($link-color, 10%);
+    color: lighten($link-color, 20%);
   }
 }
 
