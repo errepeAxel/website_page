@@ -14,6 +14,8 @@ about: # https://quarto.org/docs/websites/website-about.html
       href: https://linkedin.com
 ---
 
+This page is under construction!!!!
+
 A little bit about me and my life.
 
 {{< lipsum 1 >}}
