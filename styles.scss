@@ -5,14 +5,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
 
-$theme-lightgreen: #eeffee;
-$theme-green: darkgreen;
-$theme-black: black;
+$color-bg: #F9FAFB;
+$color-text: #2C3E50;
+$color-primary: #4E937A;
+$color-link: #3A86FF;
+$color-highlight: #E07A5F;
 
 /* Colors */
-$body-bg: $theme-lightgreen;
-$body-color: $theme-green;
-$link-color: $theme-black;
+$body-bg: $color-bg;
+$body-color: $color-text;
+$link-color: $color-link;
 
 /* Fonts */
 $font-family-sans-serif: "Poppins", sans-serif;
@@ -21,19 +23,25 @@ $font-size-root: 17px;
  /*-- scss:rules --*/
 
 h1, h2, h3, h4, h5, h6 {
-  color: $theme-green;
+  color: $color-primary;
 }
 
 .navbar * {
-  color: $theme-green;
+  color: $color-primary;
 }
 
 span.navbar-title {
-  color: $theme-green;
+  color: $color-primary;
   transition-duration: 0.6s;
   &:hover {
-    color: lighten($theme-green, 20%);
-    transition-duration: 0.6s;
+      color: lighten($color-primary, 20%);
+      transition-duration: 0.6s;
+    }
+  }
+
+a {
+  &:hover {
+    color: lighten($link-color, 10%);
   }
 }
 
