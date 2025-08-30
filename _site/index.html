@@ -119,52 +119,53 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
   </div>
 </header><main class="content" id="quarto-document-content">
-<p>This page is under construction!!!!</p>
-<p>A little bit about me and my life.</p>
-<p>Nunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti.</p>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<p>University of XYZ, City | Location | Sept 20XX - June 20XX</p>
-</section>
-<section id="experience" class="level2">
-<h2 data-anchor-id="experience">Experience</h2>
-<p>Workplace | Job title | April 20XX - present</p>
+<p>Hi! 👋</p>
+<p>I’m a bioinformatics &amp; melanoma 🧬 researcher currently interning at the <a href="https://marinelab.sites.vib.be/en">Laboratory for Molecular Cancer Biology @ VIB-CCB</a> analyzing multi-omics data.</p>
+<p>Previously, I graduated from the undergraduate program of Genomic Sciences at the National Autonomous University of Mexico (<a href="https://www.enesjuriquilla.unam.mx/?page_id=4122">LCGEJ-UNAM</a> 🇲🇽) and I was an intern at <a href="https://liigh.unam.mx/drobles/">The Cancer Genetics &amp; Bioinformatics Lab @ LIIGH-UNAM</a> developing machine learning models.</p>
+<p>I look at cells doing cell things 🦠 and ask a computer 💻 to help me make sense of it. Sometimes I post about that journey in my blog.</p>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const phrases = ["Bioinformatician", "Omics Enthusiast", "Cancer Biology Enthusiast"];
+  // Array of phrases that will be "typed out" in the subtitle
+  const phrases = ["Bioinformatics", "Omics Enthusiast", "Cancer Biology"];
+  // Grab the HTML element where text will appear (the <span class="typewriter"> in the subtitle)
   const el = document.querySelector('.typewriter');
+  // i = index of current phrase, j = index of character in that phrase
   let i = 0, j = 0, current = [], isDeleting = false;
   function type() {
-    const full = phrases[i];
+    const full = phrases[i];  // The full phrase we are currently typing/deleting
     if (!isDeleting) {
+      // Typing forward: add one character at a time
       if (j < full.length) {
-        current.push(full.charAt(j));
+        current.push(full.charAt(j));  // Add next character to current array
         j++;
-        el.textContent = current.join('');
+        el.textContent = current.join('');  // Update text in the HTML element
       } else {
+        // Finished typing phrase, start deleting after a short pause
         isDeleting = true;
-        setTimeout(type, 1000);
+        setTimeout(type, 1000);  // Wait 1 second before starting deletion
         return;
       }
     } else {
+      // Deleting: remove one character at a time
       if (j > 0) {
         current.pop();
         j--;
         el.textContent = current.join('');
       } else {
+        // Finished deleting, move to next phrase
         isDeleting = false;
-        i = (i + 1) % phrases.length;
+        i = (i + 1) % phrases.length;  // Loop back to first phrase after last one
       }
     }
+    // Speed: slower typing (150 ms), faster deleting (100 ms)
     const timeout = isDeleting ? 100 : 150;
-    setTimeout(type, timeout);
+    setTimeout(type, timeout);  // Schedule next step of typing/deleting
   }
-  type();
+  type();  // Start the typing effect when page loads
 });
 </script>
 
 
-</section>
 </main> 
   <hr class="about-sep">
    <div class="about-links">

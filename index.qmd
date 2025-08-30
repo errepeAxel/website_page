@@ -1,9 +1,9 @@
 ---
 title: "Axel Rodríguez-Pérez"
-subtitle: '<span class="typewriter"></span>'
+subtitle: '<span class="typewriter"></span>' # Subtitle with an empty span; filled dynamically with JS typing effect
 image: profile-pic-3.png
-about: # https://quarto.org/docs/websites/website-about.html
-  template: jolla
+about: 
+  template: jolla # Uses the "jolla" template style from Quarto
   links:
     - icon: github
       text: Github
@@ -13,54 +13,60 @@ about: # https://quarto.org/docs/websites/website-about.html
       href: https://linkedin.com
 ---
 
-This page is under construction!!!!
+Hi! 👋
 
-A little bit about me and my life.
+I'm a bioinformatics & melanoma 🧬 researcher currently interning at the [Laboratory for Molecular Cancer Biology \@ VIB-CCB](https://marinelab.sites.vib.be/en) analyzing multi-omics data.
 
-{{< lipsum 1 >}}
+Previously, I graduated from the undergraduate program of Genomic Sciences at the National Autonomous University of Mexico ([LCGEJ-UNAM](https://www.enesjuriquilla.unam.mx/?page_id=4122) 🇲🇽) and I was an intern at [The Cancer Genetics & Bioinformatics Lab \@ LIIGH-UNAM](https://liigh.unam.mx/drobles/) developing machine learning models.
 
-## Education
-
-University of XYZ, City \| Location \| Sept 20XX - June 20XX
-
-## Experience
- 
-Workplace \| Job title \| April 20XX - present
+I look at cells doing cell things 🦠 and ask a computer 💻 to help me make sense of it. Sometimes I post about that journey in my blog.
 
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const phrases = ["Bioinformatician", "Omics Enthusiast", "Cancer Biology Enthusiast"];
+
+  // Array of phrases that will be "typed out" in the subtitle
+  const phrases = ["Bioinformatics", "Omics Enthusiast", "Cancer Biology"];
+  
+  // Grab the HTML element where text will appear (the <span class="typewriter"> in the subtitle)
   const el = document.querySelector('.typewriter');
+  
+  // i = index of current phrase, j = index of character in that phrase
   let i = 0, j = 0, current = [], isDeleting = false;
 
   function type() {
-    const full = phrases[i];
+    const full = phrases[i];  // The full phrase we are currently typing/deleting
+    
     if (!isDeleting) {
+      // Typing forward: add one character at a time
       if (j < full.length) {
-        current.push(full.charAt(j));
+        current.push(full.charAt(j));  // Add next character to current array
         j++;
-        el.textContent = current.join('');
+        el.textContent = current.join('');  // Update text in the HTML element
       } else {
+        // Finished typing phrase, start deleting after a short pause
         isDeleting = true;
-        setTimeout(type, 1000);
+        setTimeout(type, 1000);  // Wait 1 second before starting deletion
         return;
       }
     } else {
+      // Deleting: remove one character at a time
       if (j > 0) {
         current.pop();
         j--;
         el.textContent = current.join('');
       } else {
+        // Finished deleting, move to next phrase
         isDeleting = false;
-        i = (i + 1) % phrases.length;
+        i = (i + 1) % phrases.length;  // Loop back to first phrase after last one
       }
     }
+    // Speed: slower typing (150 ms), faster deleting (100 ms)
     const timeout = isDeleting ? 100 : 150;
-    setTimeout(type, timeout);
+    setTimeout(type, timeout);  // Schedule next step of typing/deleting
   }
 
-  type();
+  type();  // Start the typing effect when page loads
 });
 </script>
 ```
